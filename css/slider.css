@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Srisakdi&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(238, 238, 238);
+  font-size: 1.6rem;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Srisakdi", cursive;
+  font-size: 6vw;
+  letter-spacing: 0.3vw;
+  word-wrap: break-word;
+}
+
+.slider {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1vw;
+  width: 90%;
+}
+
+.thumbnail {
+  box-sizing: border-box;
+  border: 0.1vw solid rgb(70, 70, 70);
+  border-radius: 0.5vw;
+  cursor: pointer;
+  height: 19vw;
+  list-style-type: none;
+  margin: 1vw;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.4s;
+  width: 19vw;
+}
+
+.thumbnail__img:focus,
+.thumbnail__img:focus-visible {
+  background: #ffffff;
+  border: 0.3vw double rgb(70, 70, 70);
+  border-radius: 0.5vw;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail__img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.popup {
+  align-items: center;
+  animation: fadeIn 0.3s;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.popup__img {
+  height: 90%;
+  object-fit: contain;
+  width: auto;
+}
+
+.popup__x--close {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  padding: 0.1em;
+  position: fixed;
+  right: 2vw;
+  top: 0.6vh;
+  width: 3em;
+}
+
+.popup--fadeOut {
+  animation: fadeOut 0.3s both;
+}
+
+/* SLIDER CONTROL */
+
+.popup button {
+  align-self: center;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  transition: background-color 0.1s;
+  z-index: 1;
+}
+
+.popup__x--close {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  height: 3.2em;
+  right: 1.2%;
+  top: 2%;
+  width: 3.2em;
+}
+
+.popup__x--close img {
+  height: 100%;
+  width: 100%;
+}
+
+.popup__x--close:hover {
+  background-color: rgba(67, 67, 67, 0.401);
+}
+
+.popup__arrow--right {
+  right: 1.4%;
+}
+
+.popup__arrow--left {
+  left: 1.4%;
+}
+
+.popup__arrow--right,
+.popup__arrow--left {
+  background-color: rgba(23, 23, 23, 0.597);
+  border: 0.01em solid rgba(53, 53, 53, 0.548);
+  border-radius: 50%;
+  height: 4.4em;
+  width: 4.4em;
+}
+
+.popup__arrow--right img,
+.popup__arrow--left img {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  width: 100%;
+}
+
+.popup__arrow--right:hover,
+.popup__arrow--left:hover {
+  background-color: rgba(67, 67, 67, 0.401);
+  border: 0.01em solid rgba(48, 48, 48, 0.401);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
